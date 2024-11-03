@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HeaderAdelante() {
   return (
-    <div className='flex my-4 py-4 justify-between bg-gray-100 shadow-xl '>
+    <div className='flex my-4 py-4 justify-between bg-gray-100 shadow-xl sticky top-4 z-10'>
       <div className='header-firstColumn justify-center items-center mx-4'>
         <div>
           <img className='w-28' src='./src/adelante logo red.png' />
@@ -10,7 +10,7 @@ export default function HeaderAdelante() {
       </div>
       <div className='header-secondColumn flex items-center  w-[100%] justify-center'>
         
-        <nav className='bg-red-600 p-4 w-[60%] h-[70%] rounded-lg flex justify-center text-gray-200'>
+        <nav className='bg-red-600 p-4 md:w-[60%] h-[70%] sm:w-[100%] rounded-lg flex justify-center text-gray-200'>
           <ul className='flex items-center w-[100%] justify-around font-bold'>
             <li className='hover:text-white hover:cursor-pointer '>Homepage</li>
             <li className='hover:text-white hover:cursor-pointer'>Shop</li>
