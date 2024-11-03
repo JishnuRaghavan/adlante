@@ -28,18 +28,7 @@ export default function Home() {
   return (
     <div className="homeArea">
     
-      <div className="landingPage" style={{"display":"flex","justifyContent":"space-evenly"}}>
-        {/* <div className="landingPage-firstColumn" style={{"width":"50%"}}>
-          <div className="text1Box">
-            <span className="firstColumnText1" ref={textQuote} contentEditable={true} >{}</span>
-          </div>
-          <div className="text2Box">
-            <span className="firstColumnText2" ref={textTitle} contentEditable={true}>{}</span>
-          </div>
-        </div> */}
-        {/* <div className="landingPage-secondColumn">
-          <img style={{"borderRadius":"10px","height":"100%"}} src="https://plus.unsplash.com/premium_photo-1661326297568-65045688d10a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-        </div> */}
+      <div className="landingPage">
         <div className="landingPage-thirdColumnBlur">
 
         </div>

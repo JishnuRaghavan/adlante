@@ -5,14 +5,12 @@ import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Profile from "./pages/Profile"
 import PageNotFound from "./pages/PageNotFound"
-import Header from "./components/Header"
 import PrivateRoute from "./components/PrivateRoute"
 import HeaderAdelante from "./components/HeaderAdelante"
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* <Header /> */}
       <HeaderAdelante />
       <Routes>
         <Route path="/" element={<Home/>} />
