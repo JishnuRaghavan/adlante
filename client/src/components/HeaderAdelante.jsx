@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HeaderAdelante() {
   return (
-    <div className='flex my-4 py-4 justify-between bg-gray-100 shadow-xl sticky top-4 z-10'>
+    <header className='header flex my-4 py-4 justify-between bg-gray-100 shadow-xl sticky top-4 z-10'>
       <div className='header-firstColumn justify-center items-center mx-4'>
         <div>
           <img className='w-28' src='./src/adelante logo red.png' />
@@ -32,6 +32,6 @@ export default function HeaderAdelante() {
           </li>
         </ul>
       </div>
-    </div>
+    </header>
   )
 }
