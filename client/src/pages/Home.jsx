@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import 'aos/dist/aos.css';
+import HomePageSecondSection from "./home components/HomePageSecondSection";
+import HomePageThirdSection from "./home components/HomePageThirdSection";
 
 export default function Home() {
 
@@ -68,16 +70,8 @@ export default function Home() {
             >
                 {imageElement}
             </div>
-            <div className="secondSection flex h-[100vh]">
-                <div className="policyBox" data-aos="slide-up">policy box</div>
-            </div>
-            <div className="thirdSection">
-                <div className="trendingFirstColumn">
-                    <div>Trendy Design</div>
-                    <div>view more</div>
-                </div>
-                <div className="trendingSecondColumn">trending second column</div>
-            </div>
+            <HomePageSecondSection />
+            <HomePageThirdSection />
         </div>
     );
 }
