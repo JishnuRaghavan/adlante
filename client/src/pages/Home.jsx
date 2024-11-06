@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
+import { lazy } from "react";
 import 'aos/dist/aos.css';
 import HomePageSecondSection from "./home components/HomePageSecondSection";
-import HomePageThirdSection from "./home components/HomePageThirdSection";
+import HomePageFourthSection from "./home components/HomePageFourthSection.jsx";
+
+const HomePageThirdSection = lazy(() => import("./home components/HomePageThirdSection.jsx"));
 
 export default function Home() {
 
@@ -10,11 +13,11 @@ export default function Home() {
     const [imageCount, setImageCount] = useState(0);
     const [imageList, setImageList] = useState(null);
     const [imageElement, setImageElement] = useState(
-        <div className="carouselBox flex items-center justify-center" style={{height:firstSectionHeight}}>
-            <img 
-                data-aos="fade-zoom-in" 
-                src="https://media.istockphoto.com/id/518730149/photo/handsome-man-wearing-norwegian-sweater.jpg?s=1024x1024&w=is&k=20&c=8Gd_GhTFG6MvF8jpNnJ7WkwIkXP_mJcuu4XNyqNXKuE=" 
-                alt="landing image" 
+        <div className="carouselBox flex items-center justify-center" style={{ height: firstSectionHeight }}>
+            <img
+                data-aos="fade-zoom-in"
+                src="https://media.istockphoto.com/id/518730149/photo/handsome-man-wearing-norwegian-sweater.jpg?s=1024x1024&w=is&k=20&c=8Gd_GhTFG6MvF8jpNnJ7WkwIkXP_mJcuu4XNyqNXKuE="
+                alt="landing image"
                 style={{ height: "100%", objectFit: 'contain' }}
             />
         </div>
@@ -43,20 +46,20 @@ export default function Home() {
             const currentImage = imageList[imageCount].download_url;
             const timer = setTimeout(() => {
                 setImageElement(
-                    <div 
-                        className="carouselBox flex items-center justify-center" 
+                    <div
+                        className="carouselBox flex items-center justify-center"
                         style={{ height: firstSectionHeight }}
                     >
-                        <img 
-                            data-aos="fade-zoom-in" 
-                            src={currentImage} 
-                            alt="landing image" 
+                        <img
+                            data-aos="fade-zoom-in"
+                            src={currentImage}
+                            alt="landing image"
                             style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                         />
                     </div>
                 );
 
-                imageCount==2?setImageCount(0):setImageCount(imageCount+1)
+                imageCount == 2 ? setImageCount(0) : setImageCount(imageCount + 1)
             }, 3000);
             return () => clearTimeout(timer);
         }
@@ -64,14 +67,17 @@ export default function Home() {
 
     return (
         <div className="homePage flex flex-col my-5 items-center">
-            <div 
-                className="firstSection w-screen" 
+            <div
+                className="firstSection w-screen"
                 style={{ height: firstSectionHeight }}
             >
                 {imageElement}
             </div>
             <HomePageSecondSection />
-            <HomePageThirdSection />
+            <Suspense fallback={"...loading"}>
+                <HomePageThirdSection />
+            </Suspense>
+            <HomePageFourthSection />
         </div>
     );
 }
