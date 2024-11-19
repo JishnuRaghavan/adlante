@@ -3,6 +3,7 @@ import { lazy } from "react";
 import 'aos/dist/aos.css';
 import HomePageSecondSection from "./home components/HomePageSecondSection";
 import HomePageFourthSection from "./home components/HomePageFourthSection.jsx";
+import HomePageContactSection from "./home components/HomePageContactSection.jsx";
 
 const HomePageThirdSection = lazy(() => import("./home components/HomePageThirdSection.jsx"));
 
@@ -119,6 +120,7 @@ export default function Home() {
       </Suspense>
       <HomePageSecondSection />
       <HomePageFourthSection />
+      <HomePageContactSection />
     </div>
   );
 }

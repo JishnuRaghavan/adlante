@@ -18,8 +18,8 @@ const HomePageThirdSection = () => {
     return (
         <div className="w-screen flex flex-col items-center mt-4 mb-10">
             <div className="trendingFirstColumn w-[1220px] flex justify-between px-4 my-10 text-2xl text-indigo-950" data-aos="slide-up">
-                <div>Trendy Design</div>
-                <div>view more</div>
+                <div className="cursor-pointer">Trendy Design</div>
+                <div className="cursor-pointer">view more</div>
             </div>
             <div className="trendingSecondColumn w-[1220px] mt-4 flex items-center justify-between relative">
                 {
