@@ -12,6 +12,8 @@
 /* For Firefox */
 * {
   scrollbar-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .trendingFirstColumn {
@@ -21,4 +23,18 @@
 /* For IE and Edge */
 * {
   -ms-overflow-style: none;
+}
+
+body {
+  background: url('https://img.freepik.com/free-photo/young-musician-singing-dancing-neon-light_155003-31944.jpg?t=st=1732086703~exp=1732090303~hmac=fc5fa15c2d5d52b8f571212b2792a6d7841fa9bead455bc7d78e090b027bdde7&w=996');
+
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
