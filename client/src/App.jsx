@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import SignIn from "./pages/SignIn"
@@ -7,21 +7,23 @@ import Profile from "./pages/Profile"
 import PageNotFound from "./pages/PageNotFound"
 import PrivateRoute from "./components/PrivateRoute"
 import HeaderAdelante from "./components/HeaderAdelante"
+import FooterAdelante from "./components/FooterAdelante"
 
 export default function App() {
   return (
     <BrowserRouter>
       <HeaderAdelante />
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/sign-in" element={<SignIn/>} />
-        <Route path="/sign-up" element={<SignUp/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
-        <Route path="*" element={<PageNotFound/>} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <FooterAdelante />
     </BrowserRouter>
   )
 }

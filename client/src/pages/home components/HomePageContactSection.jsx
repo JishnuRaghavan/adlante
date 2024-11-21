@@ -3,10 +3,10 @@ import React from 'react'
 export default function
   () {
   return (
-    <div className='w-screen flex flex-col justify-center items-center bg-slate-300 h-[50vh]'>
-      <div className=' bg-sky-100 shadow-xl flex flex-col justify-center items-center'>
+    <div className='w-screen flex flex-col justify-center items-center bg-slate-300 h-[60vh]'>
+      <div className=' bg-sky-100 shadow-xl flex flex-col justify-center items-center rounded-lg p-4'>
         <div className='py-5 flex'>
-          <div className='border-solid border-slate-300 border-2 rounded-full p-1'>
+          <div className="group border-solid border-slate-300 border-2 rounded-full p-1 mx-2 hover:border-gray-500 hover:cursor-pointer">
             <svg
               version={1.0}
               xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,8 @@ export default function
             >
               <g
                 transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
-                fill="rgb(203,213,225)"
+                className="group-hover:fill-gray-500"
+                fill="rgb(203,213,225)" /* Default fill color */
                 stroke="none"
               >
                 <path
@@ -44,7 +45,8 @@ m60 0 c0 -5 -9 -10 -20 -10 -11 0 -20 5 -20 10 0 6 9 10 20 10 11 0 20 -4 20
               </g>
             </svg>
           </div>
-          <div className='border-solid border-slate-300 border-2 rounded-full p-1'>
+
+          <div className='border-solid border-slate-300 border-2 rounded-full p-1 mx-2 cursor-pointer hover:cursor-pointer hover:border-gray-500 group'>
             <svg
               version={1.0}
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,7 @@ m60 0 c0 -5 -9 -10 -20 -10 -11 0 -20 5 -20 10 0 6 9 10 20 10 11 0 20 -4 20
               viewBox="0 0 50.000000 50.000000"
               preserveAspectRatio="xMidYMid meet"
             >
-              <g
+              <g className='group-hover:fill-gray-500'
                 transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
                 fill="rgb(203,213,225)"
                 stroke="none"
@@ -68,7 +70,7 @@ m60 0 c0 -5 -9 -10 -20 -10 -11 0 -20 5 -20 10 0 6 9 10 20 10 11 0 20 -4 20
               </g>
             </svg>
           </div>
-          <div className='border-solid border-slate-300 border-2 rounded-full p-1'>
+          <div className='border-solid border-slate-300 border-2 rounded-full p-1 mx-2 cursor-pointer group hover:cursor-pointer hover:border-gray-500'>
             <svg
               version={1.0}
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +79,7 @@ m60 0 c0 -5 -9 -10 -20 -10 -11 0 -20 5 -20 10 0 6 9 10 20 10 11 0 20 -4 20
               viewBox="0 0 50.000000 50.000000"
               preserveAspectRatio="xMidYMid meet"
             >
-              <g
+              <g className='group-hover:fill-gray-500'
                 transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)"
                 fill="rgb(203,213,225)"
                 stroke="none"
@@ -87,6 +89,31 @@ m60 0 c0 -5 -9 -10 -20 -10 -11 0 -20 5 -20 10 0 6 9 10 20 10 11 0 20 -4 20
 96 -155 110 -155 14 0 75 86 110 156 37 76 52 150 40 196 -12 43 -66 95 -111
 108 -39 11 -44 11 -83 0z m88 -116 c20 -20 20 -68 0 -88 -20 -20 -68 -20 -88
 0 -20 20 -20 68 0 88 8 9 28 16 44 16 16 0 36 -7 44 -16z"
+                />
+              </g>
+            </svg>
+          </div>
+          <div className='border-solid border-slate-300 border-2 rounded-full p-1 mx-2 hover:cursor-pointer hover:border-gray-500 group'>
+            <svg
+              version={1.0}
+              xmlns="http://www.w3.org/2000/svg"
+              width="50.000000pt"
+              height="50.000000pt"
+              viewBox="0 0 32.000000 32.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <g className='group-hover:fill-gray-500'
+                transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)"
+                fill="rgb(203,213,225)"
+                stroke="none"
+              >
+                <path
+                  d="M30 160 l0 -90 130 0 130 0 0 90 0 90 -130 0 -130 0 0 -90z m228 61
+c8 -5 12 -23 10 -49 l-3 -41 -34 21 -34 22 29 23 c39 31 23 29 -26 -3 l-40
+-27 -41 27 c-22 15 -43 26 -45 23 -3 -2 7 -12 22 -22 l27 -17 -29 -24 c-16
+-13 -32 -23 -36 -24 -14 0 -9 88 5 93 21 9 181 7 195 -2z m-24 -86 c20 -15 36
+-31 36 -36 0 -5 -49 -9 -110 -9 -60 0 -110 4 -110 9 0 5 17 22 39 38 49 36 96
+36 145 -2z"
                 />
               </g>
             </svg>
