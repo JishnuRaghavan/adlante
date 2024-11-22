@@ -108,7 +108,7 @@ export default function Home() {
   }, [prevScrollPos]);
 
   return (
-    <div className="homePage flex flex-col my-5 items-center">
+    <div className="homePage flex flex-col mt-5 items-center">
       <div
         className="firstSection w-screen"
         style={{ height: firstSectionHeight }}

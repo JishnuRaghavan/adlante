@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function HeaderAdelante() {
 
@@ -13,8 +14,12 @@ export default function HeaderAdelante() {
 
         <nav className='bg-cyan-600 p-4 md:w-[60%] h-[70%] sm:w-[100%] rounded-lg flex justify-center text-gray-200'>
           <ul className='flex items-center w-[100%] justify-around font-bold'>
-            <li className='hover:text-white hover:cursor-pointer '>Home</li>
-            <li className='hover:text-white hover:cursor-pointer'>Shop</li>
+            <li className='hover:text-white hover:cursor-pointer '>
+              <Link to="/">Home</Link>
+            </li>
+            <li className='hover:text-white hover:cursor-pointer'>
+              <Link to='/shop-page'>Shop</Link>
+            </li>
             <li className='hover:text-white hover:cursor-pointer'>About</li>
             <li className='hover:text-white hover:cursor-pointer'>Contact</li>
           </ul>

@@ -8,6 +8,7 @@ import PageNotFound from "./pages/PageNotFound"
 import PrivateRoute from "./components/PrivateRoute"
 import HeaderAdelante from "./components/HeaderAdelante"
 import FooterAdelante from "./components/FooterAdelante"
+import Shop from "./pages/Shop"
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
+        <Route path="/shop-page" element={<Shop />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <FooterAdelante />
