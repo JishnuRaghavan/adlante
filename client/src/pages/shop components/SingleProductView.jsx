@@ -1,7 +1,7 @@
-const SingleProductView = ({ product }) => {
+const SingleProductView = ({ product , filtered }) => {
 
   return (
-    <div className="m-4 p-4 w-[400px] rounded-lg shadow-2xl bg-white">
+    <div className="m-4 p-4 w-[400px] rounded-lg shadow-2xl bg-white" style={filtered?{width:"300px"}:{}}>
       <img className="my-2 cursor-pointer" src={product.images[0]} alt="" />
       <div className="flex justify-center items-center my-2">{product.title}</div>
       <div className="flex justify-around my-2">

@@ -4,6 +4,8 @@ import ProductFilter from "../utils/ProductFilter";
 
 const Shop = () => {
 
+  const [sizeFilterOpen,setSizeFilterOpen]  = useState(false);
+  const [colorFilterOpen,setColorFilterOpen]  = useState(false);
   const [filtered, setFiltered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
@@ -35,7 +37,7 @@ const Shop = () => {
       </div>
       <div className="shopPageBody">
         <div className="shopPageHeader h-20 flex items-center p-4">
-          <div className="w-1/3">
+          <div className="w-1/3" style={filtered?{width:'320px'}:{}}>
             <div onClick={handleFilter} className="flex gap-1 cursor-pointer">
               <span>Filters:</span>
               {
@@ -55,11 +57,11 @@ const Shop = () => {
               }
             </div>
           </div>
-          <div className="flex w-2/3">
-            <div className="w-1/2 flex justify-center ">
+          <div className="flex w-2/3" style={filtered?{width:'100%'}:{}}>
+            <div className="w-1/2 flex justify-center" style={filtered?{justifyContent:'flex-start'}:{}}>
               <span>Showing {products.length > 30 ? 30 : products.length} of {products.length} items</span>
             </div>
-            <div className="w-1/2 flex justify-end">sort</div>
+            <div className="w-1/2 flex justify-end" style={filtered?{justifyContent:'flex-end'}:{}}>sort</div>
           </div>
         </div>
         <div className="shoppingPageBody flex w-screen min-h-[100vh]">
@@ -71,10 +73,10 @@ const Shop = () => {
               <h1>nothing to load</h1> :
               products.length <= 30 ?
                 (
-                  <ShopPageBody handlePageSelect={handlePageSelect} products={products} />
+                  <ShopPageBody filtered={filtered} handlePageSelect={handlePageSelect} products={products} />
                 ) :
                 (
-                  <ShopPageBody handlePageSelect={handlePageSelect} products={products.slice(((currentPage - 1) * 30), (currentPage * 30))} />
+                  <ShopPageBody filtered={filtered} handlePageSelect={handlePageSelect} products={products.slice(((currentPage - 1) * 30), (currentPage * 30))} />
                 )
           }
         </div>
