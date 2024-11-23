@@ -3,12 +3,10 @@ import SingleProductView from "./SingleProductView";
 const ShopPageBody = ({ handlePageSelect, products }) => {
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap w-full justify-around">
       {
         products.map((product) => (
-          <div key={product.id} className="w-80 h-96 flex m-4 p-4">
-            <img src={product.images[0]} alt="product image" />
-          </div>
+          <SingleProductView key={product.id} product={product}/>
         ))
       }
       <div>

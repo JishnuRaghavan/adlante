@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ShopPageBody from "./shop components/ShopPageBody";
+import ProductFilter from "../utils/ProductFilter";
 
 const Shop = () => {
 
@@ -28,11 +29,12 @@ const Shop = () => {
 
 
   return (
-    <div className="border-2">
-      <div className="shopPageBanner h-56 border-2">
+    <div className="bg-gradient-to-r from-cyan-200 to-sky-300">
+      <div className="absolute top-0 bg-gradient-to-r from-cyan-200 to-sky-300 min-h-[100vh] w-screen z-[-100] m-0 p-0 left-0"></div>
+      <div className="shopPageBanner h-56">
       </div>
       <div className="shopPageBody">
-        <div className="shopPageHeader h-20 border-2 flex items-center p-4">
+        <div className="shopPageHeader h-20 flex items-center p-4">
           <div className="w-1/3">
             <div onClick={handleFilter} className="flex gap-1 cursor-pointer">
               <span>Filters:</span>
@@ -61,7 +63,9 @@ const Shop = () => {
           </div>
         </div>
         <div className="shoppingPageBody flex w-screen min-h-[100vh]">
-          <div>filter</div>
+          {
+            filtered && <ProductFilter />
+          }
           {
             products.length == 0 ?
               <h1>nothing to load</h1> :
