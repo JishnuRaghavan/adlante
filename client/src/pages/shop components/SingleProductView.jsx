@@ -1,5 +1,6 @@
 const SingleProductView = ({ product , filtered }) => {
 
+  console.log(filtered)
   return (
     <div className="m-4 p-4 w-[400px] rounded-lg shadow-2xl bg-white" style={filtered?{width:"300px"}:{}}>
       <img className="my-2 cursor-pointer" src={product.images[0]} alt="" />
