@@ -22,7 +22,9 @@ export default function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
-        <Route path="/shop-page" element={<Shop />} />
+        <Route path="/shop-page" element={<Shop />} >
+          
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <FooterAdelante />
