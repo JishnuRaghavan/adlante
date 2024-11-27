@@ -4,13 +4,13 @@ import ProductFilter from "../utils/ProductFilter";
 
 const Shop = () => {
 
-  const [sizeFilterOpen,setSizeFilterOpen]  = useState(false);
-  const [colorFilterOpen,setColorFilterOpen]  = useState(false);
+  const [sizeFilterOpen, setSizeFilterOpen] = useState(false);
+  const [colorFilterOpen, setColorFilterOpen] = useState(false);
   const [filtered, setFiltered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    console.log('*');
+
     fetchProducts()
   }, []);
 
@@ -28,21 +28,21 @@ const Shop = () => {
   const handleFilter = () => {
     setFiltered(!filtered);
   }
-  const handleColorFilter = ()=>  {
+  const handleColorFilter = () => {
     setColorFilterOpen(!colorFilterOpen);
   }
-  const handleSizeFilter  = ()=>  {
+  const handleSizeFilter = () => {
     setSizeFilterOpen(!sizeFilterOpen);
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-200 to-blue-300">
-      <div className="absolute top-0 bg-gradient-to-r from-blue-200 to-blue-300 min-h-[100vh] w-screen z-[-100] m-0 p-0 left-0"></div>
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100">
+      <div className="absolute top-0 bg-gradient-to-r from-blue-50 to-blue-100 min-h-[100vh] w-screen z-[-100] m-0 p-0 left-0"></div>
       <div className="shopPageBanner h-56">
       </div>
       <div className="shopPage">
         <div className="shopPageHeader h-20 flex items-center p-4 mx-4">
-          <div className="w-1/3" style={filtered?{width:'320px'}:{}}>
+          <div className="w-1/3" style={filtered ? { width: '320px' } : {}}>
             <div onClick={handleFilter} className="flex gap-1 cursor-pointer">
               <span>Filters:</span>
               {
@@ -62,11 +62,11 @@ const Shop = () => {
               }
             </div>
           </div>
-          <div className="flex w-2/3" style={filtered?{width:'100%'}:{}}>
-            <div className="w-1/2 flex justify-center" style={filtered?{justifyContent:'flex-start'}:{}}>
+          <div className="flex w-2/3" style={filtered ? { width: '100%' } : {}}>
+            <div className="w-1/2 flex justify-center" style={filtered ? { justifyContent: 'flex-start' } : {}}>
               <span>Showing {products.length > 30 ? 30 : products.length} of {products.length} items</span>
             </div>
-            <div className="w-1/2 flex justify-end" style={filtered?{justifyContent:'flex-end'}:{}}>sort</div>
+            <div className="w-1/2 flex justify-end" style={filtered ? { justifyContent: 'flex-end' } : {}}>sort</div>
           </div>
         </div>
         <div className="shoppingPageBody flex w-screen min-h-[100vh]">
