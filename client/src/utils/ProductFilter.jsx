@@ -1,6 +1,6 @@
 const ProductFilter = ({sizeFilterOpen,colorFilterOpen ,handleColorFilter ,handleSizeFilter})=>  {
   return (
-    <div className="mt-4 mx-4 px-4 flex flex-col w-72 h-20">
+    <div className="mt-4 mx-4 px-4 flex flex-col w-72 h-20 sticky top-32">
       <div className="p-2 h-10 text-center cursor-pointer border-2" onClick={handleSizeFilter}>size</div>
       <div className="border-2 flex flex-wrap justify-around items-center transition-opacity transition-[.5s ease-in-out] p-2" style={sizeFilterOpen?{opacity:"1"}:{visibility:"hidden",opacity:"0",height:"0px",padding:"0px"}}>
         <div className="rounded-md bg-slate-100 w-8 h-8 flex justify-center items-center cursor-pointer">S</div>

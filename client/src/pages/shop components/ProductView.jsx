@@ -8,7 +8,7 @@ const ProductView = () => {
 
   useEffect(() => {
     fetchProductData();
-  }, [])
+  }, []);
 
   const fetchProductData = async () => {
     const data = await fetch(`https://api.escuelajs.co/api/v1/products/${productID}`);

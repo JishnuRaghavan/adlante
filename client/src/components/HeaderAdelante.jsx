@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function HeaderAdelante() {
 
   return (
-    <header className='header flex my-4 justify-between bg-gray-100 shadow-2xl sticky top-4 z-10 transition-opacity trasition-[.5s ease-in-out]'>
+    <header className='header flex my-4 justify-between bg-gray-100 shadow-2xl sticky top-4 z-50 transition-opacity trasition-[.5s ease-in-out]'>
       <div className='header-firstColumn justify-center items-center mx-4 flex'>
         <div>
           <img className='w-36' src='./src/adelante logo red.png' />

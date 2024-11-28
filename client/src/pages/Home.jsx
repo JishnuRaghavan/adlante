@@ -23,7 +23,7 @@ export default function Home() {
       />
     </div>
   );
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  // const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
 
   // Calculate header height and update firstSectionHeight
   useEffect(() => {
@@ -67,45 +67,45 @@ export default function Home() {
     }
   }, [imageCount, imageList, firstSectionHeight]);
 
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    const threshold = 100;
+  // const handleScroll = () => {
+  //   const currentScrollPos = window.pageYOffset;
+  //   const threshold = 100;
 
-    if (Math.abs(prevScrollPos - currentScrollPos) < threshold) {
-      return;
-    }
-    if (prevScrollPos > currentScrollPos) {
-      handleScrollUp();
-    }
-    if (prevScrollPos < currentScrollPos) {
-      handleScrollDown();
-    }
+  //   if (Math.abs(prevScrollPos - currentScrollPos) < threshold) {
+  //     return;
+  //   }
+  //   if (prevScrollPos > currentScrollPos) {
+  //     handleScrollUp();
+  //   }
+  //   if (prevScrollPos < currentScrollPos) {
+  //     handleScrollDown();
+  //   }
 
-    setPrevScrollPos(currentScrollPos);
-  }
-  const handleScrollUp = () => {
-    const headerComponent = document.querySelector('.header');
-    if (headerComponent) {
-      headerComponent.style.visibility = 'visible';
-      headerComponent.style.opacity = 1;
-    }
-  }
+  //   setPrevScrollPos(currentScrollPos);
+  // }
+  // const handleScrollUp = () => {
+  //   const headerComponent = document.querySelector('.header');
+  //   if (headerComponent) {
+  //     headerComponent.style.visibility = 'visible';
+  //     headerComponent.style.opacity = 1;
+  //   }
+  // }
 
-  const handleScrollDown = () => {
-    const headerComponent = document.querySelector('.header');
-    if (headerComponent) {
-      headerComponent.style.opacity = 0;
-      headerComponent.style.visibility = 'hidden';
-    }
-  }
+  // const handleScrollDown = () => {
+  //   const headerComponent = document.querySelector('.header');
+  //   if (headerComponent) {
+  //     headerComponent.style.opacity = 0;
+  //     headerComponent.style.visibility = 'hidden';
+  //   }
+  // }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }, [prevScrollPos]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   }
+  // }, [prevScrollPos]);
 
   return (
     <div className="homePage flex flex-col mt-5 items-center">

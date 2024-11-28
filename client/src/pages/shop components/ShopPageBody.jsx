@@ -2,8 +2,6 @@ import SingleProductView from "./SingleProductView";
 
 const ShopPageBody = ({ handlePageSelect, products, filtered }) => {
 
-  console.log(products)
-
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-wrap w-full justify-around" style={filtered ? { justifyContent: "space-between" } : {}}>

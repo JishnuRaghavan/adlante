@@ -9,10 +9,50 @@ const Shop = () => {
   const [filtered, setFiltered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
+  const [prevScrollPos,setPrevScrollPos]  = useState(window.pageYOffset);
+
   useEffect(() => {
 
     fetchProducts()
   }, []);
+
+  const handleScrollDown  = ()=>  {
+    const shopPageFilter  = document.getElementById('shopPageFilter');
+
+    shopPageFilter.style.position = 'sticky';
+    shopPageFilter.style.top      = '10px';
+    shopPageFilter.style.zIndex   = '100';
+    shopPageFilter.style.backgroundColor  = 'linear-gradient(to right, #f0f4ff, #dbeaff)'
+  }
+
+  const handleScrollUp  = ()=>  {
+    const shopPageFilter  = document.getElementById('shopPageFilter');
+
+    shopPageFilter.style.position = 'sticky';
+    shopPageFilter.style.top      = '100px';
+    shopPageFilter.style.zIndex   = '100';
+  }
+
+  const handleScroll  = ()=>  {
+    const currentScrollPos  = window.pageYOffset;
+    if(prevScrollPos > currentScrollPos){
+      handleScrollUp();
+    }
+    if(prevScrollPos < currentScrollPos){
+      handleScrollDown();
+    }
+    setPrevScrollPos(currentScrollPos);
+  }
+
+  useEffect(()=>{
+
+    window.addEventListener('scroll',handleScroll);
+
+    return ()=>{
+      window.removeEventListener('scroll',handleScroll);
+    }
+  },[prevScrollPos]);
+  
 
   const fetchProducts = async () => {
     const data = await fetch('https://api.escuelajs.co/api/v1/products');
@@ -41,7 +81,7 @@ const Shop = () => {
       <div className="shopPageBanner h-56">
       </div>
       <div className="shopPage">
-        <div className="shopPageHeader h-20 flex items-center p-4 mx-4">
+        <div id="shopPageFilter" className="shopPageFilter h-20 flex items-center p-8 w-screen">
           <div className="w-1/3" style={filtered ? { width: '320px' } : {}}>
             <div onClick={handleFilter} className="flex gap-1 cursor-pointer">
               <span>Filters:</span>
@@ -69,7 +109,7 @@ const Shop = () => {
             <div className="w-1/2 flex justify-end" style={filtered ? { justifyContent: 'flex-end' } : {}}>sort</div>
           </div>
         </div>
-        <div className="shoppingPageBody flex w-screen min-h-[100vh]">
+        <div className="shoppingPageBody flex w-screen min-h-[100vh] relative">
           {
             filtered && <ProductFilter sizeFilterOpen={sizeFilterOpen} handleSizeFilter={handleSizeFilter} colorFilterOpen={colorFilterOpen} handleColorFilter={handleColorFilter} />
           }
