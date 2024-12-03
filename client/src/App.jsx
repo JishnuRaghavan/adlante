@@ -12,6 +12,7 @@ import Shop from "./pages/Shop";
 import ProductView from "./pages/shop components/ProductView";
 import useScrollToTop from "./utils/useScrollToTop";
 import useHeaderScrollingEffect from "./utils/useHeaderScrollingEffect";
+import Cart from "./pages/Cart";
 
 export default function App() {
   return (

@@ -9,50 +9,50 @@ const Shop = () => {
   const [filtered, setFiltered] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
-  const [prevScrollPos,setPrevScrollPos]  = useState(window.pageYOffset);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
 
   useEffect(() => {
 
     fetchProducts()
   }, []);
 
-  const handleScrollDown  = ()=>  {
-    const shopPageFilter  = document.getElementById('shopPageFilter');
+  const handleScrollDown = () => {
+    const shopPageFilter = document.getElementById('shopPageFilter');
 
     shopPageFilter.style.position = 'sticky';
-    shopPageFilter.style.top      = '10px';
-    shopPageFilter.style.zIndex   = '100';
-    shopPageFilter.style.backgroundColor  = 'linear-gradient(to right, #f0f4ff, #dbeaff)'
+    shopPageFilter.style.top = '10px';
+    shopPageFilter.style.zIndex = '100';
+    shopPageFilter.style.backgroundColor = 'linear-gradient(to right, #f0f4ff, #dbeaff)'
   }
 
-  const handleScrollUp  = ()=>  {
-    const shopPageFilter  = document.getElementById('shopPageFilter');
+  const handleScrollUp = () => {
+    const shopPageFilter = document.getElementById('shopPageFilter');
 
     shopPageFilter.style.position = 'sticky';
-    shopPageFilter.style.top      = '100px';
-    shopPageFilter.style.zIndex   = '100';
+    shopPageFilter.style.top = '100px';
+    shopPageFilter.style.zIndex = '100';
   }
 
-  const handleScroll  = ()=>  {
-    const currentScrollPos  = window.pageYOffset;
-    if(prevScrollPos > currentScrollPos){
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
       handleScrollUp();
     }
-    if(prevScrollPos < currentScrollPos){
+    if (prevScrollPos < currentScrollPos) {
       handleScrollDown();
     }
     setPrevScrollPos(currentScrollPos);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    window.addEventListener('scroll',handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-    return ()=>{
-      window.removeEventListener('scroll',handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     }
-  },[prevScrollPos]);
-  
+  }, [prevScrollPos]);
+
 
   const fetchProducts = async () => {
     const data = await fetch('https://api.escuelajs.co/api/v1/products');
