@@ -31,7 +31,7 @@ const ProductView = () => {
           <div className="w-1/5 px-2 flex flex-wrap gap-2 overflow-hidden cursor-[url('https://img.icons8.com/?size=26&id=6454&format=png'),default]">
             {
               product?.images?.map((image, index) => (
-                <img onClick={handleClick(index)} className="draggableImages min-h-[250px] rounded-lg" src={image} alt="secondoryimages" />
+                <img key={index} onClick={handleClick(index)} className="draggableImages min-h-[250px] rounded-lg" src={image} alt="secondoryimages" />
               ))
             }
           </div>

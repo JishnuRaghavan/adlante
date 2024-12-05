@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
-const SingleProductView = ({ product, filtered }) => {
+const SingleProductView = ({ product, filtered, addToCart }) => {
 
   const handleAddToCart = (event) => {
     event.preventDefault();
     event.stopPropagation();
+    console.log(product)
+    addToCart(product);
   }
 
   const handleAddToWishlist = (event) => {
