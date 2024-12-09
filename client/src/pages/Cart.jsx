@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ showCart, cartVisible }) => {
+  const navigate  = useNavigate();
   const [closing, setClosing] = useState(false);
   const handleClose = () => {
     setClosing(true);
@@ -12,6 +14,11 @@ const Cart = ({ showCart, cartVisible }) => {
   };
 
   const cart = useSelector(state => state.cart);
+  
+  const proceedToCheckout = ()=>  {
+    navigate('/checkout-page');
+  }
+
   const dispatch = useDispatch();
 
   return (
@@ -21,7 +28,7 @@ const Cart = ({ showCart, cartVisible }) => {
           }`}
         data-aos={closing ? "slide-left" : "slide-left"}
       >
-        <div className="cartBox1stRow h-28 flex justify-between p-4">
+        <div className="cartBoxHeader h-28 flex justify-between p-4 sticky top-0 bg-green-100">
           <div className="flex text-black items-end" style={{ fontSize: `calc(20/10*1rem)` }}>
             Your Cart
           </div>
@@ -59,6 +66,14 @@ const Cart = ({ showCart, cartVisible }) => {
               </div>
             ))
           }
+        </div>
+        <div className="cartBoxFooter sticky bottom-3 my-2 p-2 bg-green-100 h-28 flex flex-col">
+          <div className="flex justify-between p-2">
+            <span>Subtotal ({cart.totalQuantity} item)</span>
+            <span>{cart.totalPrice}</span>
+          </div>
+          <button onClick={proceedToCheckout} className="bg-slate-950 text-white p-4 hover:bg-black">CONTINUE TO CHECKOUT</button>
+          <div className="text-center text-sm bg-green-100">Psst, get it now before it sells out.</div>
         </div>
       </div>
     </div>

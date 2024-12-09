@@ -21,8 +21,8 @@ const Shop = () => {
 
     shopPageFilter.style.position = 'sticky';
     shopPageFilter.style.top = '10px';
-    shopPageFilter.style.zIndex = '100';
-    shopPageFilter.style.backgroundColor = 'linear-gradient(to right, #f0f4ff, #dbeaff)'
+    shopPageFilter.style.background = '#f1f5f9';
+    shopPageFilter.style.zIndex = 40;
   }
 
   const handleScrollUp = () => {
@@ -30,7 +30,8 @@ const Shop = () => {
 
     shopPageFilter.style.position = 'sticky';
     shopPageFilter.style.top = '100px';
-    shopPageFilter.style.zIndex = '100';
+    shopPageFilter.style.background = '#f1f5f9';
+    shopPageFilter.style.zIndex = 40;
   }
 
   const handleScroll = () => {
