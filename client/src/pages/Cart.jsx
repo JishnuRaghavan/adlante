@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { deleteItemFromCart } from "../redux/cart/cartSlice";
 
 const Cart = ({ showCart, cartVisible }) => {
   const navigate  = useNavigate();
@@ -20,6 +21,9 @@ const Cart = ({ showCart, cartVisible }) => {
   }
 
   const dispatch = useDispatch();
+  const handleDeleteFromCart  = (id)=>{
+    dispatch(deleteItemFromCart(id));
+  };
 
   return (
     <div className="fixed bg-transparent z-50 inset-0 pl-[60vw]">
@@ -49,7 +53,7 @@ const Cart = ({ showCart, cartVisible }) => {
                     <div>{item.price}</div>
                   </div>
                   <div className="itemArea3 flex flex-col justify-between items-center w-1/4">
-                    <div className="w-7 p-1 rounded-full shadow-xl cursor-pointer">
+                    <div className="w-7 p-1 rounded-full shadow-xl cursor-pointer" onClick={()=>handleDeleteFromCart(item.id)}>
                       <img className="" src="https://cdn-icons-png.flaticon.com/128/10065/10065108.png" alt="delete-button" />
                     </div>
                     <div className="flex gap-2 shadow-md w-full rounded-sm">

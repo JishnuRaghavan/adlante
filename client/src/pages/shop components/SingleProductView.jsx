@@ -5,7 +5,6 @@ const SingleProductView = ({ product, filtered, addToCart }) => {
   const handleAddToCart = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log(product)
     addToCart(product);
   }
 

@@ -22,9 +22,21 @@ const cartSlice = createSlice({
 
       state.totalQuantity += newItem.quantity;
       state.totalPrice += newItem.price * newItem.quantity;
+    },
+    deleteItemFromCart(state,action){
+      const itemToDeleteId  = action.payload;
+      const existingItem  = state.cartItems.find(item=>item.id == itemToDeleteId);
+
+      if(existingItem){
+        state.totalQuantity -=  existingItem.quantity;
+        state.totalPrice    -=  existingItem.price;
+        state.cartItems      =  state.cartItems.filter(item=> item.id !== itemToDeleteId);
+      }
     }
   }
 })
 
-export const { addItemsToCart } = cartSlice.actions;
+export const { 
+  addItemsToCart,
+  deleteItemFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
