@@ -11,14 +11,22 @@ const cartSlice = createSlice({
   reducers: {
     addItemsToCart(state, action) {
       const newItem = action.payload;
-      state.cartItems.push({
-        id: newItem.id,
-        title: newItem.title,
-        price: newItem.price,
-        quantity: newItem.quantity,
-        image: newItem.image,
-        totalPrice: newItem.price * newItem.quantity,
-      })
+      const existingItem  = state.cartItems.find(item=>item.id == newItem.id);
+      if(existingItem){
+        existingItem.quantity +=  newItem.quantity;
+        existingItem.totalPrice =  existingItem.quantity*newItem.price;
+      }
+      else{
+
+        state.cartItems.push({
+          id: newItem.id,
+          title: newItem.title,
+          price: newItem.price,
+          quantity: newItem.quantity,
+          image: newItem.image,
+          totalPrice: newItem.price * newItem.quantity,
+        })
+      }
 
       state.totalQuantity += newItem.quantity;
       state.totalPrice += newItem.price * newItem.quantity;
@@ -29,8 +37,28 @@ const cartSlice = createSlice({
 
       if(existingItem){
         state.totalQuantity -=  existingItem.quantity;
-        state.totalPrice    -=  existingItem.price;
+        state.totalPrice    -=  existingItem.quantity*existingItem.price;
         state.cartItems      =  state.cartItems.filter(item=> item.id !== itemToDeleteId);
+      }
+    },
+    increaseCartItem(state,action){
+      const itemToIncrease  = action.payload;
+      const existingItem  = state.cartItems.find(item=>item.id  === itemToIncrease);
+      if(existingItem){
+        existingItem.quantity++;
+        existingItem.totalPrice += existingItem.price;
+        state.totalQuantity++;
+        state.totalPrice  +=  existingItem.price;
+      }
+    },
+    decreaseCartItem(state,action){
+      const itemToDecrease  = action.payload;
+      const existingItem    = state.cartItems.find(item=>item.id  === itemToDecrease);
+      if(existingItem && existingItem.quantity !== 1){
+        existingItem.quantity--;
+        existingItem.totalPrice -=  existingItem.price;
+        state.totalQuantity--;
+        state.totalPrice  -=  existingItem.price;
       }
     }
   }
@@ -38,5 +66,5 @@ const cartSlice = createSlice({
 
 export const { 
   addItemsToCart,
-  deleteItemFromCart } = cartSlice.actions;
+  deleteItemFromCart,increaseCartItem,decreaseCartItem } = cartSlice.actions;
 export default cartSlice.reducer;

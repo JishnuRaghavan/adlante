@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteItemFromCart } from "../redux/cart/cartSlice";
+import { decreaseCartItem, deleteItemFromCart, increaseCartItem } from "../redux/cart/cartSlice";
 
 const Cart = ({ showCart, cartVisible }) => {
   const navigate  = useNavigate();
@@ -24,6 +24,12 @@ const Cart = ({ showCart, cartVisible }) => {
   const handleDeleteFromCart  = (id)=>{
     dispatch(deleteItemFromCart(id));
   };
+  const handleIncreaseToCart  = (id)=>{
+    dispatch(increaseCartItem(id));
+  }
+  const handleDecreaseFromCart  = (id)=>{
+    dispatch(decreaseCartItem(id));
+  }
 
   return (
     <div className="fixed bg-transparent z-50 inset-0 pl-[60vw]">
@@ -57,11 +63,11 @@ const Cart = ({ showCart, cartVisible }) => {
                       <img className="" src="https://cdn-icons-png.flaticon.com/128/10065/10065108.png" alt="delete-button" />
                     </div>
                     <div className="flex gap-2 shadow-md w-full rounded-sm">
-                      <div className="cursor-pointer w-full flex items-center justify-center">
+                      <div className="cursor-pointer w-full flex items-center justify-center" onClick={()=>handleDecreaseFromCart(item.id)}>
                         -
                       </div>
                       <div className="w-1/3 flex items-center justify-center">{item.quantity}</div>
-                      <div className="cursor-pointer w-full flex items-center justify-center">
+                      <div className="cursor-pointer w-full flex items-center justify-center" onClick={()=>handleIncreaseToCart(item.id)}>
                         +
                       </div>
                     </div>
