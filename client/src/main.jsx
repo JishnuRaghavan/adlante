@@ -17,6 +17,7 @@ import PageNotFound from './pages/PageNotFound.jsx';
 import SignIn from './pages/SignIn.jsx';
 import SignUp from './pages/SignUp.jsx';
 import Profile from './pages/Profile.jsx';
+import AdminDashboard from './pages/admin pages/AdminDashboard.jsx';
 
 AOS.init();
 
@@ -57,9 +58,14 @@ const appRouter = createBrowserRouter([
         path:'sign-up',
         element:<SignUp />
       }
+      
     ],
     errorElement:<PageNotFound />
-  }
+  },
+  {
+        path:'admin',
+        element:<AdminDashboard />
+      }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
