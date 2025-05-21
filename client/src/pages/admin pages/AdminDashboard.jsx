@@ -9,40 +9,7 @@ import MonthlyStatisticsChart from '../../adminComponents/MonthlyStatisticsChart
 import { RevenueChart } from '../../adminComponents/RevenueChart'
 
 function AdminDashboard() {
-    const products = [
-  {
-    image: "admin-asset/img/product-slider-1.png",
-    title: "Stylish leather bag",
-    priceOld: "$150",
-    priceNew: "$130",
-    rating: 51,
-    sales: 60,
-  },
-  {
-    image: "admin-asset/img/product-slider-2.png",
-    title: "Stylish leather bag",
-    priceOld: "$150",
-    priceNew: "$130",
-    rating: 51,
-    sales: 60,
-  },
-  {
-    image: "admin-asset/img/product-slider-3.png",
-    title: "Stylish leather bag",
-    priceOld: "$150",
-    priceNew: "$130",
-    rating: 51,
-    sales: 60,
-  },
-  {
-    image: "admin-asset/img/product-slider-4.png",
-    title: "Stylish leather bag",
-    priceOld: "$150",
-    priceNew: "$130",
-    rating: 51,
-    sales: 60,
-  },
-];
+   
   return (
     <div id="sherah-dark-light">
         <div className="sherah-body-area">
