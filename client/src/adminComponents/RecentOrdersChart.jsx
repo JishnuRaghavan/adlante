@@ -37,6 +37,11 @@ export const RecentOrdersChart = () => {
       }
     });
 
+       new CircleProgress(".circle__two", {
+      max: 100,
+      value: 40,
+    });
+
     return () => chart.destroy();
   }, []);
 

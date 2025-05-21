@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 
 export const ActiveCreatorsChart = () => {
-  const chartRef = useRef();
-
+   const chartRef = useRef(null);
+  const circleRef = useRef(null);
+  const chartInstanceRef = useRef(null); // to track the Chart.js instance
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
 
@@ -13,7 +14,7 @@ export const ActiveCreatorsChart = () => {
         datasets: [{
           label: 'Total Clients',
           data: [0, 10, 15, 10, 20],
-          borderColor: '#F9C200',
+          borderColor: "#F9C200",
           borderWidth: 7,
           pointRadius: 0,
           tension: 0.5,
@@ -37,8 +38,25 @@ export const ActiveCreatorsChart = () => {
       }
     });
 
-    return () => chart.destroy();
-  }, []);
+  
+    // === Circle Progress ===
+    new CircleProgress(".circle__one", {
+      max: 100,
+      value: 60,
+    });
+ 
 
-  return <canvas ref={chartRef} />;
+
+
+   
+  return () => chart.destroy();
+   
+  }, []);
+  
+ 
+
+
+ return <canvas ref={chartRef} />;
+
+ 
 };
