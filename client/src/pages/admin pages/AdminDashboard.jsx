@@ -7,12 +7,16 @@ import { ActiveCreatorsChart } from '../../adminComponents/ActiveCreatorsChart'
 import { RecentOrdersChart } from '../../adminComponents/RecentOrdersChart'
 import MonthlyStatisticsChart from '../../adminComponents/MonthlyStatisticsChart'
 import { RevenueChart } from '../../adminComponents/RevenueChart'
+import ProductSlider from '../../adminComponents/ProductSlider'
 
 function AdminDashboard() {
+    
    
   return (
     <div id="sherah-dark-light">
-        <div className="sherah-body-area">
+      
+        
+        <div className="sherah-body-area bg-white">
             <HeaderAdmin/>
             <SideBarAdmin/>
            
@@ -771,8 +775,10 @@ function AdminDashboard() {
         </div>
       </div>
     </div>
-
-
+<div className="sherah-products sherah-default-bg sherah-border  mg-top-30">
+<h2 className="sherah-heading__title">Top Products</h2>
+<ProductSlider/>
+</div>
 </div>
 
 </div>
