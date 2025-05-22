@@ -8,13 +8,13 @@ import { RecentOrdersChart } from '../../adminComponents/RecentOrdersChart'
 import MonthlyStatisticsChart from '../../adminComponents/MonthlyStatisticsChart'
 import { RevenueChart } from '../../adminComponents/RevenueChart'
 import ProductSlider from '../../adminComponents/ProductSlider'
-
+import LoadStylesheets from '../../adminComponents/LoadStylesheets'
 function AdminDashboard() {
     
    
   return (
     <div id="sherah-dark-light">
-      
+      <LoadStylesheets/>
         
         <div className="sherah-body-area bg-white">
             <HeaderAdmin/>
