@@ -3,6 +3,7 @@ import Chart from 'chart.js/auto';
 
 const MyChartComponent = () => {
   const chartRef = useRef();
+  
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
