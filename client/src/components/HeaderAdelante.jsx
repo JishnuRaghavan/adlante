@@ -69,7 +69,7 @@ export default function HeaderAdelante() {
       }
 
       {
-        profileVisible && <SideProfileBar setProfileVisible={setProfileVisible} />
+        profileVisible && <SideProfileBar setProfileVisible={setProfileVisible} profileVisible={profileVisible} />
       }
     </>
   )
