@@ -16,7 +16,7 @@ import Cart from "./pages/Cart";
 import CheckoutPage from "./pages/CheckoutPage";
 
 export default function App() {
-  const noHeaderRoutes  = ['/checkout-page','sign-in','sign-up'];
+  const noHeaderRoutes  = ['/checkout-page','/sign-in','/sign-up'];
 
   useScrollToTop();
   useHeaderScrollingEffect();
