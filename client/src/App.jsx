@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import HeaderAdelante from "./components/HeaderAdelante";
-import FooterAdelante from "./components/FooterAdelante";
+import HeaderAdelante from "./userComponents/HeaderAdelante";
+import FooterAdelante from "./userComponents/FooterAdelante";
 import useScrollToTop from "./utils/useScrollToTop";
 import useHeaderScrollingEffect from "./utils/useHeaderScrollingEffect";
 
