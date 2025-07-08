@@ -109,7 +109,7 @@ export default function Profile() {
     }
   }
   return (
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='p-3 max-w-lg mx-auto relative'>
       <h1 className='text-3xl font-semibold text-center my-7'>profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input type="file" ref={fileRef} hidden accept='image/*' onChange={e=>setImage(e.target.files[0])} />

@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from '../pages/Cart';
+import SideProfileBar from '../pages/SideProfileBar';
 
 export default function HeaderAdelante() {
 
   const [cartVisible, setCartVisible] = useState(false);
+  const [profileVisible,setProfileVisible]  = useState(false);
+  const [wishlistVisible,setWishlistVisible]  = useState(false);
+
   const showCart = () => {
     setTimeout(() => {
       setCartVisible(!cartVisible);
     }, 500);
+  }
+
+  const showWishlist  = ()=>  {
+    setTimeout(()=>{
+      setWishlistVisible(!wishlistVisible);
+    },500);
+  }
+
+  const showProfile = ()=>  {
+    setTimeout(()=>{
+      setProfileVisible(!profileVisible);
+    },500);
   }
 
   return (
@@ -43,13 +59,17 @@ export default function HeaderAdelante() {
               <img className='w-7' src="https://cdn-icons-png.flaticon.com/128/8815/8815853.png" alt="wish list" />
             </li>
             <li>
-              <img className='w-7' src="https://cdn-icons-png.flaticon.com/128/8791/8791434.png" alt="profile" />
+              <img onClick={showProfile} className='w-7' src="https://cdn-icons-png.flaticon.com/128/8791/8791434.png" alt="profile" />
             </li>
           </ul>
         </div>
       </header>
       {
         cartVisible && <Cart cartVisible={cartVisible} showCart={showCart} />
+      }
+
+      {
+        profileVisible && <SideProfileBar setProfileVisible={setProfileVisible} profileVisible={profileVisible} />
       }
     </>
   )

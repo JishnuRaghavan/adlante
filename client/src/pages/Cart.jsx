@@ -13,11 +13,15 @@ const Cart = ({ showCart, cartVisible }) => {
       showCart();
     });
   };
-
-  const cart = useSelector(state => state.cart);
   
+  const {currentUser} = useSelector((state)=>state.user);
+  const cart = useSelector(state => state.cart);
+
   const proceedToCheckout = ()=>  {
-    navigate('/checkout-page');
+    
+    currentUser?
+    navigate('/checkout-page'):
+    navigate('/sign-in');
   }
 
   const dispatch = useDispatch();
@@ -34,7 +38,7 @@ const Cart = ({ showCart, cartVisible }) => {
   return (
     <div className="fixed bg-transparent z-50 inset-0 pl-[60vw]">
       <div
-        className={`cartBox top-0 bottom-0 right-0 bg-green-100 h-full flex flex-col overflow-x-hidden ${closing ? "animate-slide-right" : "animate-slide-left"
+        className={`cartBox top-0 bottom-0 right-0 bg-white h-full flex flex-col justify-between overflow-x-hidden ${closing ? "animate-slide-right" : "animate-slide-left"
           }`}
         data-aos={closing ? "slide-left" : "slide-left"}
       >
@@ -77,7 +81,9 @@ const Cart = ({ showCart, cartVisible }) => {
             ))
           }
         </div>
-        <div className="cartBoxFooter sticky bottom-3 my-2 p-2 bg-green-100 h-28 flex flex-col">
+        {
+          cart.cartItems.length ?
+            <div className="cartBoxFooter sticky bottom-3 my-2 p-2 bg-green-100 h-28 flex flex-col">
           <div className="flex justify-between p-2">
             <span>Subtotal ({cart.totalQuantity} item)</span>
             <span>{cart.totalPrice}</span>
@@ -85,6 +91,11 @@ const Cart = ({ showCart, cartVisible }) => {
           <button onClick={proceedToCheckout} className="bg-slate-950 text-white p-4 hover:bg-black">CONTINUE TO CHECKOUT</button>
           <div className="text-center text-sm bg-green-100">Psst, get it now before it sells out.</div>
         </div>
+        :
+        <div>
+          your cart is empty.
+        </div>
+        }
       </div>
     </div>
   );
