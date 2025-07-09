@@ -3,6 +3,7 @@ import HeaderAdelante from "./userComponents/HeaderAdelante";
 import FooterAdelante from "./userComponents/FooterAdelante";
 import useScrollToTop from "./utils/useScrollToTop";
 import useHeaderScrollingEffect from "./utils/useHeaderScrollingEffect";
+import LoadStylesheets from "./adminComponents/LoadStylesheets";
 
 export default function App() {
   const noHeaderRoutes  = ['/checkout-page','/sign-in','/sign-up'];
@@ -13,7 +14,9 @@ export default function App() {
   return (
     <>
       {!noHeaderRoutes.includes(location.pathname) && <HeaderAdelante />} 
+     
       <Outlet />
+      
       {!noHeaderRoutes.includes(location.pathname) && <FooterAdelante />}
     </>
   );

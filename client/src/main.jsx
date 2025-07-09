@@ -18,6 +18,10 @@ import SignIn from './pages/SignIn.jsx';
 import SignUp from './pages/SignUp.jsx';
 import Profile from './pages/Profile.jsx';
 import AdminDashboard from './pages/admin pages/AdminDashboard.jsx';
+import Products from './adminComponents/Products.jsx';
+import ProductDetails from './adminComponents/ProductDetails.jsx';
+import LoadStylesheets from './adminComponents/LoadStylesheets.jsx';
+import UploadProduct from './adminComponents/UploadProduct.jsx';
 
 AOS.init();
 
@@ -26,6 +30,7 @@ const appRouter = createBrowserRouter([
     path:'/',
     element:<App />,
     children:[
+      
       {
         path:'/',
         element:<Home />
@@ -38,6 +43,7 @@ const appRouter = createBrowserRouter([
         path:'/shop-page',
         element:<Shop />
       },
+     
       {
         path:'/product/:productID',
         element:<ProductView />
@@ -65,7 +71,19 @@ const appRouter = createBrowserRouter([
   {
         path:'admin',
         element:<AdminDashboard />
-      }
+      },
+       {
+        path:'/admin-products',
+        element:<Products />
+      },
+       {
+        path:'/admin-product-details',
+        element:<ProductDetails />
+      },
+       {
+        path:'/admin-upload-product',
+        element:<UploadProduct />
+      },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

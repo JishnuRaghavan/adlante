@@ -92,9 +92,9 @@ function SideBarAdmin() {
 
 <div className="collapse sherah__dropdown" id="menu-item_products" data-bs-parent="#sherahMenu">
 <ul className="menu-bar__one-dropdown">
-<li><a href="products.html"><span className="menu-bar__text"><span className="menu-bar__name">Products</span></span></a></li>
-<li><a href="product-list.html"><span className="menu-bar__text"><span className="menu-bar__name">Product Details</span></span></a></li>
-<li><a href="upload-product.html"><span className="menu-bar__text"><span className="menu-bar__name">Upload Product</span></span></a></li>
+<li><a href="admin-products"><span className="menu-bar__text"><span className="menu-bar__name">Products</span></span></a></li>
+<li><a href="admin-product-details"><span className="menu-bar__text"><span className="menu-bar__name">Product Details</span></span></a></li>
+<li><a href="admin-upload-product"><span className="menu-bar__text"><span className="menu-bar__name">Upload Product</span></span></a></li>
 </ul>
 </div>
 </li>

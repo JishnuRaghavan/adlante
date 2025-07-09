@@ -36,7 +36,7 @@ const MyChartComponent = () => {
   }, []);
 
   return <canvas ref={chartRef} />;
-  console
+  
 };
 
 export default MyChartComponent;
