@@ -1,10 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartItems: [],
   totalQuantity: 0,
   totalPrice: 0
 }
+
+export const addToCartDB  = createAsyncThunk(
+  'cart/addToCartDB',
+  async (cartItem)  =>  {
+    console.log('add to cart in slice executed')
+    const res = await fetch('/api/cart/addToCart',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(cartItem),
+      credentials:'include',
+    });
+    console.log(res)
+    return res.json();
+  }
+)
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
